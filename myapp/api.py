@@ -119,14 +119,16 @@ class ReviewResource(ModelResource):
     #     return bundle
 
     def build_filters(self, filters=None):
-        res = super(ReviewResource, self).build_filters(filters)
-
-        if 'tid' in filters:
-            try:
-                res.update({'tid': str(filters['tid'])})
-            except:
-                raise InvalidFilterError('tid must be an integer!')
-        return res
+        tid = applicable_filters.pop('tid', None)
+        qs = super(ReviewResource, self).apply_filters(request, applicable_filters)
+        if tid is not None:
+             org = qs.filter(MovieID = tid)
+             if org :
+                 return qs.filter(MovieID = tid)
+             else:
+                 return qs.filter(MovieID = 'default')    
+                # release_date__lte=datetime.date(tid,12,31))
+        return qs
 
     def apply_filters(self, request, applicable_filters):
         tid = applicable_filters.pop('tid', None)
