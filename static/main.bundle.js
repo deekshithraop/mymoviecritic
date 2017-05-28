@@ -7846,7 +7846,7 @@ var ProfileComponent = (function () {
     function ProfileComponent(http) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.userlink = "https://mydjangoapp57.herokuapp.com/api/v1/user/" + this.currentUser.id + "/?format=json";
-        this.criticlink = 'https://mydjangoapp57.herokuapp.com/api/v1/critic?format=json';
+        this.criticlink = 'https://mydjangoapp57.herokuapp.com/api/v1/critic/?format=json';
         this.myuserlink = "https://mydjangoapp57.herokuapp.com/api/v1/usercritic/";
         this.http = http;
         this.allcritics();
