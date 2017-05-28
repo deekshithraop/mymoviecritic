@@ -7692,7 +7692,7 @@ var AdvancedsearchComponent = (function () {
         this.results = [];
         this.link = 'https://www.omdbapi.com/?t=';
         this.mylink = 'https://mydjangoapp57.herokuapp.com/api/v1/review/?format=json&tid=';
-        this.myuserlink = "https://mydjangoapp57.herokuapp.com/api/v1/usercritic";
+        this.myuserlink = "https://mydjangoapp57.herokuapp.com/api/v1/usercritic/";
         this.movieTitleToRottenRatingMap = {};
         this.giphies = [];
         this.reviews = [];
@@ -8104,7 +8104,7 @@ var MovieComponent = (function () {
         this.title = '';
         this.link = 'https://www.omdbapi.com/?apikey=11046d35&t=';
         this.mylink = 'https://mydjangoapp57.herokuapp.com/api/v1/review/?format=json&tid=';
-        this.myuserlink = "https://mydjangoapp57.herokuapp.com/api/v1/usercritic";
+        this.myuserlink = "https://mydjangoapp57.herokuapp.com/api/v1/usercritic/";
         this.show = true;
         this.view = true;
         this.reviews = [];
